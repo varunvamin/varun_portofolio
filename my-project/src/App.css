@@ -126,7 +126,7 @@ section { padding: 10rem 0; position: relative; }
 }
 
 .hero-title {
-  font-size: clamp(4rem, 8vw, 7rem);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   line-height: 1.05;
   background: var(--text-gradient);
   -webkit-background-clip: text;
