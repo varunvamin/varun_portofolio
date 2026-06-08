@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 export function Hero() {
   return (
     <section id="home" className="hero-section">
+      <div className="hero-mesh-blob"></div>
       <div className="section-container" style={{ width: '100%' }}>
         <motion.div 
           className="hero-content"
