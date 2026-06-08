@@ -45,11 +45,11 @@ export function Contact() {
                 <p className="contact-value">+91-9108315624</p>
               </div>
             </motion.a>
-            <motion.a variants={itemVariants} href="https://linkedin.com/in/varunvamin" target="_blank" rel="noopener noreferrer" className="contact-link">
+            <motion.a variants={itemVariants} href="https://linkedin.com/in/varun-v-amin" target="_blank" rel="noopener noreferrer" className="contact-link">
               <span className="contact-icon"><Globe className="accent-icon" size={32} /></span>
               <div>
                 <p className="contact-type">LinkedIn</p>
-                <p className="contact-value">linkedin.com/in/varunvamin</p>
+                <p className="contact-value">linkedin.com/in/varun-v-amin</p>
               </div>
             </motion.a>
             <motion.a variants={itemVariants} href="https://github.com/varunvamin" target="_blank" rel="noopener noreferrer" className="contact-link">

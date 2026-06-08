@@ -55,7 +55,7 @@ export function Hero() {
             <a href="mailto:varunvamin@gmail.com" className="btn btn-primary">
               Get in Touch <ArrowRight size={18} />
             </a>
-            <a href="https://linkedin.com/in/varunvamin" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+            <a href="https://linkedin.com/in/varun-v-amin" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
               <Globe size={18} /> LinkedIn
             </a>
           </motion.div>
@@ -77,7 +77,7 @@ export function Hero() {
             </div>
             <div className="contact-item">
               <span className="contact-label"><Globe size={16} /> LinkedIn</span>
-              <p>linkedin.com/in/varunvamin</p>
+              <p>linkedin.com/in/varun-v-amin</p>
             </div>
           </div>
         </motion.div>
