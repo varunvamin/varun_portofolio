@@ -5,9 +5,9 @@ export function About() {
     <section id="about" style={{ background: 'var(--bg-tertiary)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
       <div className="section-container">
         
-        <div className="about-editorial">
+        <div className="about-split">
           <motion.div 
-            className="about-editorial-text"
+            className="about-text"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}

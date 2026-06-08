@@ -12,20 +12,29 @@ import './App.css'
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <main className="main-content">
-        <Hero />
-        <About />
-        <Experience />
-        <Education />
-        <Projects />
-        <Skills />
-        <Certifications />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <div className="aurora-bg">
+        <div className="aurora-blob aurora-1"></div>
+        <div className="aurora-blob aurora-2"></div>
+        <div className="aurora-blob aurora-3"></div>
+      </div>
+      <div className="grid-overlay"></div>
+      
+      <div className="app">
+        <Header />
+        <main className="main-content">
+          <Hero />
+          <About />
+          <Experience />
+          <Education />
+          <Projects />
+          <Skills />
+          <Certifications />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </>
   )
 }
 
