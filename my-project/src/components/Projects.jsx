@@ -36,7 +36,7 @@ export function Projects() {
       description: 'Ensemble ML architecture analyzing MRI scans with PCA and majority voting.',
       image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800',
       github: '#',
-      featured: true
+      featured: false
     }
   ];
 
@@ -53,7 +53,7 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`bento-card ${project.featured ? 'featured' : ''}`}
+              className={`bento-card ${project.featured ? 'featured' : 'standard'}`}
             >
               <div className="bento-image-wrapper">
                 <img src={project.image} alt={project.title} className="bento-image" />
