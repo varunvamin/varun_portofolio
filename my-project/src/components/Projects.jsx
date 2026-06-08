@@ -1,67 +1,55 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Code2, CheckCircle2 } from 'lucide-react';
+import { ExternalLink, Code } from 'lucide-react';
 
 export function Projects() {
   const projects = [
     {
       title: 'RAG AI Assistant',
       description: 'Retrieval-Augmented Generation chatbot answering queries from PDF documents using semantic search and LLM-powered responses.',
-      tech: ['Python', 'Streamlit', 'LangChain', 'FAISS', 'Google Gemini API'],
-      highlights: [
-        'Implemented document ingestion and text chunking',
-        'FAISS-based vector storage for efficient retrieval',
-        'Integrated Google Gemini API for context-aware responses'
-      ]
+      tech: ['Python', 'Streamlit', 'LangChain', 'FAISS', 'Gemini API'],
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800',
+      github: '#',
+      demo: '#'
     },
     {
-      title: 'Industrial Machine Health Monitoring System',
-      description: 'IoT-based industrial machine monitoring system using ESP32 for real-time health assessment.',
-      tech: ['ESP32', 'Embedded C', 'Thingspeak', 'Arduino IDE', 'IoT'],
-      highlights: [
-        'Integrated temperature, vibration, and current sensors',
-        'Wi-Fi communication and ThingSpeak cloud integration',
-        'Threshold-based anomaly detection and alert generation'
-      ]
+      title: 'Industrial Machine Health Monitoring',
+      description: 'IoT-based industrial machine monitoring system using ESP32 for real-time health assessment and anomaly detection.',
+      tech: ['ESP32', 'Embedded C', 'Thingspeak', 'IoT'],
+      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800',
+      github: '#',
+      demo: '#'
     },
     {
-      title: 'Brain Tumor Detection Using ML',
-      description: 'Brain tumor classification system using MRI images with multiple ML algorithms.',
-      tech: ['Python', 'OpenCV', 'Scikit-learn', 'Google Colab'],
-      highlights: [
-        'Implemented SVM, KNN, and Random Forest classifiers',
-        'PCA for dimensionality reduction',
-        'Majority voting mechanism for robust predictions'
-      ]
+      title: 'Brain Tumor Detection System',
+      description: 'Medical imaging classification system analyzing MRI scans with multiple ML algorithms and majority voting.',
+      tech: ['Python', 'OpenCV', 'Scikit-learn', 'PCA'],
+      image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800',
+      github: '#',
+      demo: '#'
     },
     {
       title: 'Science Tutor Bot',
-      description: 'Science-focused chatbot using LLMs with two-layer classification system.',
-      tech: ['Python', 'Flask', 'Groq API', 'LLMs', 'LoRA/Unsloth'],
-      highlights: [
-        'Two-layer classification with BART zero-shot classification',
-        'Fine-tuned Llama model using LoRA on SciQ dataset',
-        'Deployed as Flask web app on Render'
-      ]
+      description: 'Domain-specific educational chatbot using a two-layer classification system and fine-tuned Llama model via LoRA.',
+      tech: ['Python', 'Flask', 'Groq API', 'LoRA', 'NLP'],
+      image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800',
+      github: '#',
+      demo: '#'
     },
     {
       title: 'Clinical Code Mapping Engine',
-      description: 'Healthcare data processing pipeline for medical code mapping.',
-      tech: ['Python', 'Pandas', 'FastAPI', 'REST APIs'],
-      highlights: [
-        'SNOMED-CT to ICD-10 code mapping using rule-based algorithms',
-        'RESTful APIs with FastAPI',
-        'Efficient clinical dataset handling with Pandas'
-      ]
+      description: 'High-performance healthcare data pipeline converting SNOMED-CT to ICD-10 medical codes.',
+      tech: ['Python', 'Pandas', 'FastAPI', 'REST'],
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800',
+      github: '#',
+      demo: '#'
     },
     {
-      title: 'Sequence Quest - PSoC Project',
-      description: 'Embedded system on PSoC microcontroller for sequence validation.',
-      tech: ['Embedded C', 'PSoC', 'UART', 'LCD'],
-      highlights: [
-        'Keypad input and LCD interfacing',
-        'UART communication for real-time validation',
-        'Optimized system reliability through testing'
-      ]
+      title: 'Sequence Quest (PSoC)',
+      description: 'Low-level embedded system designed on a PSoC microcontroller for secure sequence validation and UART comms.',
+      tech: ['Embedded C', 'PSoC', 'UART', 'Hardware'],
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800',
+      github: '#',
+      demo: '#'
     }
   ];
 
@@ -91,27 +79,29 @@ export function Projects() {
         >
           {projects.map((project, index) => (
             <motion.div key={index} variants={cardVariants} className="project-card">
-              <div className="project-header-icon">
-                <Code2 size={32} className="accent-icon" />
-                <ExternalLink size={20} className="hover-icon" />
+              <div className="project-image-container">
+                <img src={project.image} alt={project.title} className="project-image" />
+                <div className="project-image-overlay"></div>
               </div>
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-description">{project.description}</p>
-              
-              <div className="project-tech">
-                {project.tech.map((tech, i) => (
-                  <span key={i} className="tech-tag">{tech}</span>
-                ))}
+              <div className="project-content">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+                
+                <div className="project-tech">
+                  {project.tech.map((tech, i) => (
+                    <span key={i} className="tech-tag">{tech}</span>
+                  ))}
+                </div>
+                
+                <div className="project-links">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
+                    <Code size={18} /> Source Code
+                  </a>
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link">
+                    <ExternalLink size={18} /> Live Demo
+                  </a>
+                </div>
               </div>
-              
-              <ul className="project-highlights">
-                {project.highlights.map((highlight, i) => (
-                  <li key={i}>
-                    <CheckCircle2 size={16} className="highlight-icon" />
-                    <span>{highlight}</span>
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </motion.div>

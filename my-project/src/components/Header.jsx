@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,10 +13,39 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-50% 0px -50% 0px' }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection(id);
   };
+
+  const navItems = [
+    { name: 'Home', id: 'home' },
+    { name: 'About', id: 'about' },
+    { name: 'Projects', id: 'projects' },
+    { name: 'Skills', id: 'skills' },
+    { name: 'Contact', id: 'contact' }
+  ];
 
   return (
     <motion.header 
@@ -27,16 +57,16 @@ export function Header() {
       <nav className="nav-container">
         <div className="logo">
           <h1 className="name">Varun V Amin</h1>
-          <p className="tagline">Electronics Engineer • AI/ML Developer</p>
+          <p className="tagline">System Architect & AI Dev</p>
         </div>
         <ul className="nav-links">
-          {['About', 'Education', 'Projects', 'Skills', 'Contact'].map((item) => (
-            <li key={item}>
+          {navItems.map((item) => (
+            <li key={item.id}>
               <a 
-                onClick={() => scrollToSection(item.toLowerCase())} 
-                className="nav-link"
+                onClick={() => scrollToSection(item.id)} 
+                className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
               >
-                {item}
+                {item.name}
               </a>
             </li>
           ))}

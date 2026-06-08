@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Globe, ArrowRight } from 'lucide-react';
+import { ArrowRight, FileText } from 'lucide-react';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -16,7 +16,7 @@ const itemVariants = {
 
 export function Hero() {
   return (
-    <section id="about" className="hero-section">
+    <section id="home" className="hero-section">
       <motion.div 
         className="hero-content"
         variants={containerVariants}
@@ -25,59 +25,41 @@ export function Hero() {
         viewport={{ once: true }}
       >
         <div className="hero-text">
-          <motion.h1 variants={itemVariants} className="hero-title">
+          <motion.h2 variants={itemVariants} className="hero-subtitle">
             Varun V Amin
+          </motion.h2>
+          <motion.h1 variants={itemVariants} className="hero-title">
+            Architecting <br/><span style={{ color: 'var(--accent)' }}>Intelligence</span> & <br/>Embedded Systems.
           </motion.h1>
-          <motion.p variants={itemVariants} className="hero-subtitle">
-            Electronics & Communication Engineering Student
-          </motion.p>
           <motion.p variants={itemVariants} className="hero-description">
-            Passionate about embedded systems, AI/ML applications, and building innovative solutions. 
-            Experienced in PSoC microcontrollers, signal processing, and full-stack development.
+            I build systems that bridge the physical and digital worlds, leveraging AI/ML, signal processing, and low-level hardware design to solve complex engineering challenges.
           </motion.p>
-          
-          <motion.div variants={itemVariants} className="hero-stats">
-            <div className="stat">
-              <span className="stat-number">10+</span>
-              <span className="stat-label">Projects</span>
-            </div>
-            <div className="stat">
-              <span className="stat-number">3</span>
-              <span className="stat-label">Years Experience</span>
-            </div>
-            <div className="stat">
-              <span className="stat-number">5</span>
-              <span className="stat-label">Tech Domains</span>
-            </div>
-          </motion.div>
           
           <motion.div variants={itemVariants} className="hero-buttons">
-            <a href="mailto:varunvamin@gmail.com" className="btn btn-primary">
-              Get in Touch <ArrowRight size={18} />
+            <a href="#projects" className="btn btn-primary">
+              View Work <ArrowRight size={18} />
             </a>
-            <a href="https://linkedin.com/in/varun-v-amin" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
-              <Globe size={18} /> LinkedIn
+            <a href="#contact" className="btn btn-secondary">
+              <FileText size={18} /> Resume
             </a>
           </motion.div>
         </div>
         
-        <motion.div variants={itemVariants} className="hero-contact">
-          <div className="contact-info">
-            <div className="contact-item">
-              <span className="contact-label"><MapPin size={16} /> Location</span>
-              <p>Mangalore, Karnataka</p>
-            </div>
-            <div className="contact-item">
-              <span className="contact-label"><Phone size={16} /> Phone</span>
-              <p>+91-9108315624</p>
-            </div>
-            <div className="contact-item">
-              <span className="contact-label"><Mail size={16} /> Email</span>
-              <p>varunvamin@gmail.com</p>
-            </div>
-            <div className="contact-item">
-              <span className="contact-label"><Globe size={16} /> LinkedIn</span>
-              <p>linkedin.com/in/varun-v-amin</p>
+        <motion.div variants={itemVariants} className="hero-visuals">
+          <div className="avatar-container">
+            <div className="avatar-placeholder">
+              <img 
+                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=400" 
+                alt="Profile Avatar" 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  borderRadius: '50%', 
+                  objectFit: 'cover',
+                  opacity: 0.8,
+                  mixBlendMode: 'luminosity'
+                }} 
+              />
             </div>
           </div>
         </motion.div>

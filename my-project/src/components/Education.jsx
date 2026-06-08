@@ -7,21 +7,21 @@ export function Education() {
       institution: 'NMAM Institute of Technology, Nitte',
       degree: 'B.Tech in Electronics and Communication Engineering',
       duration: '2023 – 2027',
-      icon: <GraduationCap size={32} />
+      icon: <GraduationCap size={24} />
     },
     {
       institution: 'St. Aloysius PU College, Mangalore',
       degree: 'Pre-University',
       duration: '2021 – 2023',
       gpa: '91.6%',
-      icon: <BookOpen size={32} />
+      icon: <BookOpen size={24} />
     },
     {
       institution: 'Holy Family English Medium High School, Surathkal',
       degree: 'SSLC',
       duration: '2021',
       gpa: '89.9%',
-      icon: <School size={32} />
+      icon: <School size={24} />
     }
   ];
 
@@ -39,27 +39,27 @@ export function Education() {
   };
 
   return (
-    <section id="education" className="education-section">
+    <section id="education">
       <div className="section-container">
         <h2 className="section-title">Education</h2>
         <motion.div 
-          className="education-timeline"
+          className="timeline"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
           {education.map((edu, index) => (
-            <motion.div key={index} variants={itemVariants} className="education-item">
-              <div className="timeline-marker">
+            <motion.div key={index} variants={itemVariants} className="timeline-item">
+              <div className="timeline-icon-wrapper">
                 {edu.icon}
               </div>
-              <div className="education-content">
-                <h3 className="education-institution">{edu.institution}</h3>
-                <p className="education-degree">{edu.degree}</p>
-                <div className="education-meta">
-                  <span className="duration"><Calendar size={14} style={{ marginRight: '6px' }}/> {edu.duration}</span>
-                  {edu.gpa && <span className="gpa"><Star size={14} style={{ marginRight: '6px' }}/> {edu.gpa}</span>}
+              <div className="timeline-content">
+                <h3 className="timeline-title">{edu.institution}</h3>
+                <h4 className="timeline-subtitle">{edu.degree}</h4>
+                <div className="timeline-meta">
+                  <span><Calendar size={16} /> {edu.duration}</span>
+                  {edu.gpa && <span><Star size={16} /> {edu.gpa}</span>}
                 </div>
               </div>
             </motion.div>

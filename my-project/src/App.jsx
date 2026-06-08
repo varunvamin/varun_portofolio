@@ -1,5 +1,6 @@
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
+import { About } from './components/About'
 import { Experience } from './components/Experience'
 import { Education } from './components/Education'
 import { Projects } from './components/Projects'
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <main className="main-content">
         <Hero />
+        <About />
         <Experience />
         <Education />
         <Projects />
@@ -24,7 +26,7 @@ function App() {
       </main>
       <Footer />
     </div>
-    )
+  )
 }
 
 export default App
