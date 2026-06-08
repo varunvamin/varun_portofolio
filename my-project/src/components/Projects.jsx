@@ -1,3 +1,6 @@
+import { motion } from 'framer-motion';
+import { ExternalLink, Code2, CheckCircle2 } from 'lucide-react';
+
 export function Projects() {
   const projects = [
     {
@@ -62,28 +65,56 @@ export function Projects() {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 80 } }
+  };
+
   return (
     <section id="projects" className="projects-section">
       <div className="section-container">
         <h2 className="section-title">Featured Projects</h2>
-        <div className="projects-grid">
+        <motion.div 
+          className="projects-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {projects.map((project, index) => (
-            <div key={index} className="project-card">
+            <motion.div key={index} variants={cardVariants} className="project-card">
+              <div className="project-header-icon">
+                <Code2 size={32} className="accent-icon" />
+                <ExternalLink size={20} className="hover-icon" />
+              </div>
               <h3 className="project-title">{project.title}</h3>
               <p className="project-description">{project.description}</p>
+              
               <div className="project-tech">
                 {project.tech.map((tech, i) => (
                   <span key={i} className="tech-tag">{tech}</span>
                 ))}
               </div>
+              
               <ul className="project-highlights">
                 {project.highlights.map((highlight, i) => (
-                  <li key={i}>{highlight}</li>
+                  <li key={i}>
+                    <CheckCircle2 size={16} className="highlight-icon" />
+                    <span>{highlight}</span>
+                  </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

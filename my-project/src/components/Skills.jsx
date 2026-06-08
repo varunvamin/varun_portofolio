@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 export function Skills() {
   const skillCategories = [
     {
@@ -29,32 +31,57 @@ export function Skills() {
     { language: 'Tulu', level: 'Native' }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.9, y: 20 },
+    visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring', stiffness: 100 } }
+  };
+
   return (
     <section id="skills" className="skills-section">
       <div className="section-container">
         <h2 className="section-title">Technical Skills</h2>
-        <div className="skills-grid">
+        <motion.div 
+          className="skills-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {skillCategories.map((category, index) => (
-            <div key={index} className="skill-category">
+            <motion.div key={index} variants={itemVariants} className="skill-category">
               <h3 className="skill-category-title">{category.category}</h3>
               <div className="skill-items">
                 {category.skills.map((skill, i) => (
                   <span key={i} className="skill-item">{skill}</span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <h2 className="section-title" style={{ marginTop: '3rem' }}>Languages</h2>
-        <div className="languages-grid">
+        <h2 className="section-title" style={{ marginTop: '4rem' }}>Languages</h2>
+        <motion.div 
+          className="languages-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {languages.map((lang, index) => (
-            <div key={index} className="language-item">
+            <motion.div key={index} variants={itemVariants} className="language-item">
               <h4 className="language-name">{lang.language}</h4>
               <p className="language-level">{lang.level}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
