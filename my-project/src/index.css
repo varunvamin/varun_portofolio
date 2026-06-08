@@ -1,33 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  /* AI/ML Futuristic Dark Palette */
-  --bg: #050508;
-  --bg-secondary: #0a0a10;
-  --text: #8b9bb4;
-  --text-h: #ffffff;
-  --border: rgba(0, 240, 255, 0.15);
-  --code-bg: rgba(0, 240, 255, 0.05);
+  /* Ultra-Premium Linear/Vercel Theme */
+  --bg: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #111111;
   
-  /* Primary Accent: Electric Blue / Cyan */
-  --accent: #00f0ff;
-  --accent-light: #70ffff;
-  --accent-gradient: linear-gradient(135deg, #00f0ff 0%, #0066ff 100%);
-  --accent-bg: rgba(0, 240, 255, 0.1);
-  --accent-border: rgba(0, 240, 255, 0.3);
+  --text: #888888;
+  --text-h: #ededed;
+  --text-gradient: linear-gradient(180deg, #fff 0%, #a1a1aa 100%);
   
-  --social-bg: rgba(0, 240, 255, 0.05);
-  --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
-  --glow: 0 0 25px rgba(0, 240, 255, 0.5);
-  --glow-strong: 0 0 40px rgba(0, 240, 255, 0.8);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  
+  --accent: #ffffff;
+  --accent-glow: rgba(255, 255, 255, 0.1);
+  
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-strong: 0 20px 40px rgba(0, 0, 0, 0.8);
 
   /* Modern Typography */
   --sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --heading: 'Outfit', var(--sans);
   --mono: 'JetBrains Mono', ui-monospace, monospace;
 
   font: 16px/1.6 var(--sans);
-  letter-spacing: 0.02em;
+  letter-spacing: -0.01em;
   color-scheme: dark;
   color: var(--text);
   background: var(--bg);
@@ -41,17 +38,10 @@
   }
 }
 
-/* Base Elements with Grid Background */
 body {
   margin: 0;
   background-color: var(--bg);
-  /* Futuristic Grid Pattern */
-  background-image: 
-    linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px),
-    radial-gradient(circle at 50% 0%, rgba(0, 102, 255, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 100% 100%, rgba(0, 240, 255, 0.1) 0%, transparent 50%);
-  background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+  background-image: radial-gradient(circle at top center, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
   background-attachment: fixed;
   min-height: 100vh;
 }
@@ -69,54 +59,40 @@ body {
 
 /* Typography Base */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--heading);
+  font-family: var(--sans);
   font-weight: 700;
   color: var(--text-h);
-  line-height: 1.2;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  letter-spacing: -0.03em;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
   margin: 0;
 }
 
 h2 {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
   margin: 0;
 }
 
-p {
-  margin: 0;
-}
+p { margin: 0; }
 
 /* Utilities */
-code, .counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 6px;
-  color: var(--accent-light);
-}
-
 code {
-  font-size: 0.9em;
+  font-family: var(--mono);
+  font-size: 0.85em;
   padding: 0.2em 0.4em;
-  background: var(--code-bg);
+  background: rgba(255,255,255,0.05);
   border: 1px solid var(--border);
+  border-radius: 4px;
+  color: #fff;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg);
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 240, 255, 0.2);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
