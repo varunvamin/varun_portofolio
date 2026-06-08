@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, CheckCircle2 } from 'lucide-react';
-import { useState } from 'react';
+import { Mail } from 'lucide-react';
 
 const GithubIcon = ({ size }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -17,15 +16,6 @@ const LinkedinIcon = ({ size }) => (
 );
 
 export function Contact() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyEmail = (e) => {
-    e.preventDefault();
-    navigator.clipboard.writeText('varunvamin2005@gmail.com');
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
     <section id="contact" style={{ paddingBottom: '6rem' }}>
       <div className="section-container">
@@ -35,15 +25,13 @@ export function Contact() {
         </p>
         
         <div className="contact-grid">
-          {/* Email Card - Copies to clipboard */}
-          <div onClick={handleCopyEmail} className="contact-card" style={{ cursor: 'pointer' }}>
+          {/* Gmail Web Compose Link */}
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=varunvamin@gmail.com" target="_blank" rel="noopener noreferrer" className="contact-card">
             <div className="contact-icon-box">
-              {copied ? <CheckCircle2 size={24} color="#10b981" /> : <Mail size={24} />}
+              <Mail size={24} />
             </div>
-            <span style={{ color: copied ? '#10b981' : '#fff' }}>
-              {copied ? 'Email Copied!' : 'varunvamin2005@gmail.com'}
-            </span>
-          </div>
+            <span>varunvamin@gmail.com</span>
+          </a>
           
           <a href="https://github.com/varunvamin" target="_blank" rel="noopener noreferrer" className="contact-card">
             <div className="contact-icon-box">
