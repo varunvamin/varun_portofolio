@@ -114,8 +114,8 @@ export function Projects() {
                 </div>
 
                 <div className="bento-links" style={{ marginTop: 'auto' }}>
-                  <a href={project.github} className="bento-link" target="_blank" rel="noopener noreferrer">
-                    View Case Study <ArrowUpRight size={14} />
+                  <a href={project.github !== '#' ? project.github : 'https://github.com/varunvamin'} className="bento-link" target="_blank" rel="noopener noreferrer">
+                    View on GitHub <ArrowUpRight size={14} />
                   </a>
                 </div>
               </div>
