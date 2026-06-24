@@ -17,7 +17,7 @@ export function Hero() {
           </h1>
           
           <p className="hero-description">
-            I'm Varun V Amin, a software engineer and AI architect specializing in high-performance embedded systems, LLM fine-tuning, and scalable data pipelines.
+            I'm Varun V Amin, an Electronics Engineer and AI Developer specializing in embedded systems, machine learning, and bridging the gap between hardware and intelligent software.
           </p>
           
           <div className="hero-buttons">
