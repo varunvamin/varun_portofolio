@@ -24,6 +24,9 @@ export function Hero() {
             <a href="#projects" className="btn btn-primary">
               Explore Work
             </a>
+            <a href="/Varun_V_Amin_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ background: 'var(--accent)', color: '#fff', borderColor: 'var(--accent)' }}>
+              Download Resume
+            </a>
             <a href="#contact" className="btn btn-secondary">
               Get in touch
             </a>

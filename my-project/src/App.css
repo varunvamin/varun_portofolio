@@ -146,6 +146,8 @@ section { padding: 10rem 0; position: relative; }
 .hero-buttons {
   display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn {
