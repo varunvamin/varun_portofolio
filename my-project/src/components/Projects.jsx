@@ -50,6 +50,30 @@ export function Projects() {
       image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800',
       github: '#',
       featured: false
+    },
+    {
+      title: 'Temperature Alert System',
+      description: 'SystemVerilog-based temperature monitoring system with real-time alert logic and hardware sensor integration.',
+      tech: ['SystemVerilog', 'Hardware', 'Digital Design'],
+      image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800',
+      github: '#',
+      featured: false
+    },
+    {
+      title: 'DSP for Ultrasonic Echoes',
+      description: 'MATLAB simulation for ultrasonic signal processing, implementing denoising techniques like TV Denoising and Tikhonov Regularization.',
+      tech: ['MATLAB', 'Signal Processing', 'Algorithms'],
+      image: 'https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&q=80&w=800',
+      github: '#',
+      featured: false
+    },
+    {
+      title: 'Nutrient Calculator',
+      description: 'Python application for tracking daily nutritional intake with data processing logic for dietary analysis.',
+      tech: ['Python', 'Data Processing'],
+      image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800',
+      github: '#',
+      featured: false
     }
   ];
 

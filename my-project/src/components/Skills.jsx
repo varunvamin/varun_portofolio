@@ -5,11 +5,11 @@ export function Skills() {
   const stack = [
     { name: 'Python', icon: <Terminal size={18} /> },
     { name: 'C / Embedded C', icon: <Cpu size={18} /> },
-    { name: 'React', icon: <Code2 size={18} /> },
-    { name: 'FastAPI', icon: <Layers size={18} /> },
+    { name: 'SystemVerilog', icon: <Cpu size={18} /> },
+    { name: 'MATLAB', icon: <Layers size={18} /> },
+    { name: 'FastAPI / React', icon: <Code2 size={18} /> },
     { name: 'PyTorch / LangChain', icon: <Database size={18} /> },
-    { name: 'Verilog', icon: <Cpu size={18} /> },
-    { name: 'Pandas', icon: <Database size={18} /> },
+    { name: 'PSoC Creator', icon: <Terminal size={18} /> },
     { name: 'Azure / GCP', icon: <Cloud size={18} /> },
   ];
 
