@@ -5,7 +5,7 @@ export function Projects() {
   const projects = [
     {
       title: 'RAG AI Assistant',
-      description: 'Retrieval-Augmented Generation chatbot answering queries from PDF documents using semantic search and LLM-powered responses.',
+      description: 'Engineered a Retrieval-Augmented Generation engine that processes document queries with sub-second semantic retrieval using FAISS and LangChain.',
       tech: ['Python', 'Streamlit', 'LangChain', 'FAISS', 'Gemini API'],
       image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
       github: '#',
@@ -13,7 +13,7 @@ export function Projects() {
     },
     {
       title: 'Machine Health Monitor',
-      description: 'IoT-based industrial machine monitoring system using ESP32 for real-time health assessment and anomaly detection.',
+      description: 'Developed a real-time IoT monitoring system that detects machine anomalies, reducing unplanned downtime through predictive maintenance alerts.',
       tech: ['ESP32', 'Embedded C', 'Thingspeak', 'IoT'],
       image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800',
       github: '#',
@@ -21,7 +21,7 @@ export function Projects() {
     },
     {
       title: 'Clinical Data Pipeline',
-      description: 'High-performance healthcare data pipeline converting SNOMED-CT to ICD-10 medical codes.',
+      description: 'Architected a high-performance clinical data pipeline automating the conversion of SNOMED-CT concepts to ICD-10 codes using FastAPI and Pandas.',
       tech: ['Python', 'Pandas', 'FastAPI', 'REST'],
       image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800',
       github: '#',
@@ -29,7 +29,7 @@ export function Projects() {
     },
     {
       title: 'Science Tutor LLM',
-      description: 'Domain-specific educational chatbot using a two-layer classification system and fine-tuned Llama model via LoRA.',
+      description: 'Fine-tuned a Llama-based model via LoRA to deploy a domain-specific educational chatbot featuring a zero-shot two-layer classification system.',
       tech: ['Python', 'Flask', 'Groq API', 'LoRA', 'NLP'],
       image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800',
       github: '#',
@@ -37,7 +37,7 @@ export function Projects() {
     },
     {
       title: 'Brain Tumor Detection',
-      description: 'Medical imaging classification system analyzing MRI scans with multiple ML algorithms and majority voting.',
+      description: 'Built a robust medical imaging classification system utilizing PCA and majority voting across SVM, KNN, and Random Forest for high-accuracy MRI analysis.',
       tech: ['Python', 'OpenCV', 'Scikit-learn', 'PCA'],
       image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800',
       github: '#',
@@ -45,7 +45,7 @@ export function Projects() {
     },
     {
       title: 'Sequence Quest (PSoC)',
-      description: 'Low-level embedded system designed on a PSoC microcontroller for secure sequence validation and UART comms.',
+      description: 'Designed a low-level embedded system on a PSoC microcontroller featuring secure real-time sequence validation and hardware UART communication.',
       tech: ['Embedded C', 'PSoC', 'UART', 'Hardware'],
       image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800',
       github: '#',
@@ -53,7 +53,7 @@ export function Projects() {
     },
     {
       title: 'Temperature Alert System',
-      description: 'SystemVerilog-based temperature monitoring system with real-time alert logic and hardware sensor integration.',
+      description: 'Implemented a SystemVerilog-based hardware temperature monitoring unit featuring real-time anomaly detection and sensor integration.',
       tech: ['SystemVerilog', 'Hardware', 'Digital Design'],
       image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800',
       github: '#',
@@ -61,7 +61,7 @@ export function Projects() {
     },
     {
       title: 'DSP for Ultrasonic Echoes',
-      description: 'MATLAB simulation for ultrasonic signal processing, implementing denoising techniques like TV Denoising and Tikhonov Regularization.',
+      description: 'Simulated advanced DSP pipelines in MATLAB, optimizing ultrasonic echo clarity through Total Variation Denoising and Tikhonov Regularization.',
       tech: ['MATLAB', 'Signal Processing', 'Algorithms'],
       image: 'https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&q=80&w=800',
       github: '#',
@@ -69,7 +69,7 @@ export function Projects() {
     },
     {
       title: 'Nutrient Calculator',
-      description: 'Python application for tracking daily nutritional intake with data processing logic for dietary analysis.',
+      description: 'Developed a Python-based data processing application that automates the calculation and analysis of daily nutritional intake.',
       tech: ['Python', 'Data Processing'],
       image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800',
       github: '#',
