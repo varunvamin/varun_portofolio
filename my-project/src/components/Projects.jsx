@@ -104,7 +104,7 @@ export function Projects() {
                     <span key={i} style={{ 
                       fontSize: '0.75rem', 
                       padding: '0.25rem 0.75rem', 
-                      background: 'rgba(255,255,255,0.05)', 
+                      background: 'var(--badge-bg)', 
                       borderRadius: '100px',
                       color: 'var(--text)'
                     }}>

@@ -5,14 +5,14 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(3, 3, 5, 0.4);
+  background: var(--header-bg);
   border-bottom: 1px solid transparent;
   z-index: 100;
   transition: all 0.4s ease;
 }
 
 .header.scrolled {
-  background: rgba(3, 3, 5, 0.7);
+  background: var(--header-scrolled);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -30,7 +30,7 @@
 .logo h1.name {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--text-h);
   letter-spacing: -0.04em;
   margin: 0;
 }
@@ -55,7 +55,7 @@
 }
 
 .nav-link:hover, .nav-link.active {
-  color: #fff;
+  color: var(--text-h);
 }
 
 /* Base Section */
@@ -231,9 +231,9 @@ section { padding: 10rem 0; position: relative; }
 }
 
 .btn-primary {
-  background: #fff;
-  color: #000;
-  border: 1px solid #fff;
+  background: var(--text-h);
+  color: var(--bg);
+  border: 1px solid var(--text-h);
 }
 
 .btn-primary:hover {
@@ -244,7 +244,7 @@ section { padding: 10rem 0; position: relative; }
 
 .btn-secondary {
   background: rgba(255, 255, 255, 0.03);
-  color: #fff;
+  color: var(--text-h);
   border: 1px solid var(--border);
   backdrop-filter: blur(10px);
 }
@@ -321,7 +321,7 @@ section { padding: 10rem 0; position: relative; }
 
 .bento-title {
   font-size: 1.8rem;
-  color: #fff;
+  color: var(--text-h);
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
@@ -337,7 +337,7 @@ section { padding: 10rem 0; position: relative; }
 .bento-links { display: flex; gap: 1rem; }
 
 .bento-link {
-  color: #fff;
+  color: var(--text-h);
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
@@ -370,7 +370,7 @@ section { padding: 10rem 0; position: relative; }
 }
 
 .about-text p { margin-bottom: 2rem; }
-.about-text strong { color: #fff; font-weight: 500; }
+.about-text strong { color: var(--text-h); font-weight: 500; }
 
 .about-metrics {
   display: grid;
@@ -388,7 +388,7 @@ section { padding: 10rem 0; position: relative; }
 
 .metric-card.full-width { grid-column: span 2; }
 
-.metric-value { font-size: 3.5rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.05em; line-height: 1; }
+.metric-value { font-size: 3.5rem; font-weight: 800; color: var(--text-h); margin-bottom: 0.5rem; letter-spacing: -0.05em; line-height: 1; }
 .metric-label { font-size: 0.9rem; color: var(--text); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; }
 
 @media (max-width: 1024px) {
@@ -435,7 +435,7 @@ section { padding: 10rem 0; position: relative; }
   border-radius: 100px;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-h);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-subtle);
 }
@@ -509,7 +509,7 @@ section { padding: 10rem 0; position: relative; }
 .timeline-title {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #fff;
+  color: var(--text-h);
   margin: 0 0 0.5rem 0;
 }
 
@@ -600,7 +600,7 @@ section { padding: 10rem 0; position: relative; }
   box-shadow: 0 0 20px var(--accent-glow);
 }
 
-.contact-card span { color: #fff; font-weight: 600; font-size: 1.1rem; }
+.contact-card span { color: var(--text-h); font-weight: 600; font-size: 1.1rem; }
 
 @media (max-width: 768px) {
   .contact-grid { grid-template-columns: 1fr; }
@@ -625,7 +625,7 @@ section { padding: 10rem 0; position: relative; }
 }
 
 .footer-section h4 {
-  color: #fff;
+  color: var(--text-h);
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
