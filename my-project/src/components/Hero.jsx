@@ -11,24 +11,21 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="social-sidebar">
-            <a href="https://linkedin.com/in/varunvamin" target="_blank" rel="noreferrer" className="social-btn"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="20" style={{ filter: 'brightness(0) invert(1)' }}/></a>
-            <a href="https://github.com/varunvamin" target="_blank" rel="noreferrer" className="social-btn"><img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="GitHub" width="20" style={{ filter: 'brightness(0) invert(1)' }}/></a>
-            <a href="#" target="_blank" rel="noreferrer" className="social-btn"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="20" style={{ filter: 'brightness(0) invert(1)' }}/></a>
-            <a href="#" target="_blank" rel="noreferrer" className="social-btn"><img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="Twitter" width="20" style={{ filter: 'brightness(0) invert(1)' }}/></a>
-          </div>
-
           <div className="hero-split">
             <div className="hero-left">
               <div style={{ fontSize: '1.2rem', color: 'var(--text-h)', marginBottom: '1rem', fontWeight: '500' }}>
                 👋 Hey
               </div>
               
-              <h1 className="hero-title" style={{ textAlign: 'left', fontSize: 'clamp(3.5rem, 6vw, 5rem)', fontWeight: '800' }}>
+              <h1 className="hero-title" style={{ textAlign: 'left', fontSize: 'clamp(3.5rem, 6vw, 5rem)', fontWeight: '800', marginBottom: '0.5rem' }}>
                 I'm Varun V Amin
               </h1>
               
-              <div style={{ fontSize: '1.5rem', color: 'var(--text-h)', marginBottom: '1.5rem', fontWeight: '500' }}>
+              <h2 style={{ fontSize: '1.8rem', color: 'var(--text-h)', marginBottom: '1.5rem', fontWeight: '700', background: 'var(--text-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                Engineering the future of intelligent systems.
+              </h2>
+              
+              <div style={{ fontSize: '1.3rem', color: 'var(--text)', marginBottom: '1.5rem', fontWeight: '500' }}>
                 I am into <span style={{ color: 'var(--accent)', fontWeight: '700' }}>AI/ML & Embedded Systems</span>
               </div>
               
@@ -44,8 +41,8 @@ export function Hero() {
             </div>
             
             <div className="hero-right">
-              <div className="hero-image-container" style={{ borderRadius: '50%', border: '8px solid #ffb800', background: '#ffb800', maxWidth: '380px' }}>
-                <img src="/varunamin.png" alt="Varun V Amin" className="hero-profile-image" style={{ borderRadius: '50%', objectFit: 'cover' }} />
+              <div className="hero-image-container">
+                <img src="/varunamin.png" alt="Varun V Amin" className="hero-profile-image" />
               </div>
             </div>
           </div>
