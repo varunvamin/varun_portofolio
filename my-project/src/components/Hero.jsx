@@ -38,7 +38,7 @@ export function Hero() {
             
             <div className="hero-right">
               <div className="hero-image-container">
-                <img src="/profile.png" alt="Varun V Amin" className="hero-profile-image" />
+                <img src="/varunamin.png" alt="Varun V Amin" className="hero-profile-image" />
               </div>
             </div>
           </div>
