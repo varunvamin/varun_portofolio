@@ -303,7 +303,7 @@ section {
   position: relative;
 }
 
-.bento-card:not(.featured) .bento-image-wrapper { height: 240px; }
+.bento-card:not(.featured) .bento-image-wrapper { height: 200px; }
 
 .bento-image {
   width: 100%;

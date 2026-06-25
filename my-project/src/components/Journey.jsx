@@ -7,11 +7,11 @@ export function Journey() {
   const [activeTab, setActiveTab] = useState('experience');
 
   return (
-    <section id="journey" style={{ padding: '6rem 0' }}>
+    <section id="journey">
       <div className="section-container">
         <h2 className="section-title" style={{ textAlign: 'center' }}>Journey</h2>
         
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '3rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
           <div style={{ 
             display: 'flex', 
             background: 'var(--bg-secondary)', 
