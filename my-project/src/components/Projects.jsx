@@ -95,9 +95,9 @@ export function Projects() {
               <div className="bento-image-wrapper">
                 <img src={project.image} alt={project.title} className="bento-image" />
               </div>
-              <div className="bento-content" style={{ padding: '2rem' }}>
-                <h3 className="bento-title" style={{ fontSize: '1.4rem' }}>{project.title}</h3>
-                <p className="bento-desc" style={{ fontSize: '0.95rem' }}>{project.description}</p>
+              <div className="bento-content">
+                <h3 className="bento-title">{project.title}</h3>
+                <p className="bento-desc">{project.description}</p>
                 
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
                   {project.tech.map((tech, i) => (
