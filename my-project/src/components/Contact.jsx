@@ -35,14 +35,14 @@ export function Contact() {
   return (
     <section id="contact" style={{ paddingBottom: '6rem' }}>
       <div className="section-container">
-        <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '4rem' }}>Contact Me</h2>
+        <h2 className="section-title" style={{ textAlign: 'center' }}>Contact Me</h2>
         
         <div className="contact-split">
           <div className="contact-image-container" style={{ display: 'flex', justifyContent: 'center' }}>
             <img 
               src="/contact-illustration.png" 
               alt="Contact Illustration" 
-              style={{ width: '100%', maxWidth: '500px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))' }} 
+              style={{ width: '100%', maxWidth: '400px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))' }} 
             />
           </div>
           
