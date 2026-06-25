@@ -4,6 +4,7 @@ export function About() {
   return (
     <section id="about" style={{ background: 'var(--bg-tertiary)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
       <div className="section-container">
+        <h2 className="section-title">About Me</h2>
         
         <div className="about-split">
           <motion.div 

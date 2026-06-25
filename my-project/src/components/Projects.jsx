@@ -80,7 +80,7 @@ export function Projects() {
   return (
     <section id="projects">
       <div className="section-container">
-        <h2 className="section-title">Selected Work</h2>
+        <h2 className="section-title">Projects</h2>
         
         <div className="bento-grid">
           {projects.map((project, index) => (
