@@ -594,6 +594,58 @@ section {
   .contact-image-container { display: none !important; }
 }
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.contact-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
+}
+
+.contact-card:hover { 
+  background: rgba(255,255,255,0.03); 
+  border-color: var(--border-hover); 
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-strong);
+}
+
+.contact-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon-box {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.contact-card span { color: var(--text-h); font-weight: 600; font-size: 1.1rem; }
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
 /* Footer */
 .footer {
   border-top: 1px solid var(--border);
