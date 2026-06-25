@@ -19,7 +19,7 @@ export function Hero() {
                 Engineering the future of intelligent systems.
               </h1>
               
-              <p className="hero-description" style={{ textAlign: 'left', margin: '0 0 2rem 0', maxWidth: '600px' }}>
+              <p className="hero-description" style={{ textAlign: 'left', maxWidth: '600px' }}>
                 I'm Varun V Amin, an Electronics Engineer and AI Developer specializing in embedded systems, machine learning, and bridging the gap between hardware and intelligent software.
               </p>
               
