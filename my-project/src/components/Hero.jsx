@@ -1,6 +1,22 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export function Hero() {
+  const roles = [
+    "AI/ML Development",
+    "Embedded Systems",
+    "Backend Architecture",
+    "Full-Stack Engineering"
+  ];
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="home" className="hero-section">
       <div className="hero-mesh-blob"></div>
@@ -25,11 +41,24 @@ export function Hero() {
                 Engineering the future of intelligent systems.
               </h2>
               
-              <div style={{ fontSize: '1.3rem', color: 'var(--text)', marginBottom: '1.5rem', fontWeight: '500' }}>
-                I am into <span style={{ color: 'var(--accent)', fontWeight: '700' }}>AI/ML & Embedded Systems</span>
+              <div style={{ fontSize: '1.3rem', color: 'var(--text)', marginBottom: '1.5rem', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '0.4rem', flexWrap: 'wrap' }}>
+                I am into <span style={{ color: 'var(--accent)', fontWeight: '700', display: 'inline-block', position: 'relative', height: '1.5em', overflow: 'hidden', minWidth: '250px' }}>
+                  <AnimatePresence mode="popLayout">
+                    <motion.span
+                      key={roleIndex}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.4 }}
+                      style={{ position: 'absolute', left: 0 }}
+                    >
+                      {roles[roleIndex]}
+                    </motion.span>
+                  </AnimatePresence>
+                </span>
               </div>
               
-              <p className="hero-description" style={{ textAlign: 'left', maxWidth: '600px' }}>
+              <p className="hero-description" style={{ textAlign: 'left', maxWidth: '600px', marginTop: '1rem' }}>
                 I focus on developing intelligent infrastructure and embedded hardware that meet strict performance requirements, with attention to detail, scalability, and robust architecture.
               </p>
               
