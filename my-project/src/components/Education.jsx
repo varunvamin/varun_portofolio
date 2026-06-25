@@ -42,11 +42,7 @@ export function Education() {
   };
 
   return (
-    <section id="education">
-      <div className="section-container">
-        <h2 className="section-title">Education</h2>
-        
-        <motion.div 
+    <motion.div 
           className="timeline-container"
           variants={containerVariants}
           initial="hidden"
@@ -76,7 +72,5 @@ export function Education() {
             </motion.div>
           ))}
         </motion.div>
-      </div>
-    </section>
   );
 }

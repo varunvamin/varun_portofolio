@@ -3,11 +3,7 @@ import { Briefcase, Calendar } from 'lucide-react';
 
 export function Experience() {
   return (
-    <section id="experience">
-      <div className="section-container">
-        <h2 className="section-title">Experience</h2>
-        
-        <div className="timeline-container">
+    <div className="timeline-container">
           <motion.div 
             className="timeline-item"
             initial={{ opacity: 0, x: -20 }}
@@ -65,7 +61,5 @@ export function Experience() {
             </div>
           </motion.div>
         </div>
-      </div>
-    </section>
   );
 }

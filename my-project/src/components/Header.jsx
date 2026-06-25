@@ -1,9 +1,19 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Sun, Moon } from 'lucide-react';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [theme, setTheme] = useState('dark');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +53,7 @@ export function Header() {
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
     { name: 'Projects', id: 'projects' },
-    { name: 'Skills', id: 'skills' },
+    { name: 'Experience', id: 'journey' },
     { name: 'Contact', id: 'contact' }
   ];
 
@@ -59,18 +69,39 @@ export function Header() {
           <h1 className="name">Varun V Amin</h1>
           <p className="tagline">System Architect & AI Dev</p>
         </div>
-        <ul className="nav-links">
-          {navItems.map((item) => (
-            <li key={item.id}>
-              <a 
-                onClick={() => scrollToSection(item.id)} 
-                className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
-              >
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+          <ul className="nav-links">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a 
+                  onClick={() => scrollToSection(item.id)} 
+                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <button 
+            onClick={toggleTheme} 
+            style={{ 
+              background: 'none', 
+              border: 'none', 
+              color: 'var(--text)', 
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '0.5rem',
+              borderRadius: '50%',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => e.currentTarget.style.color = 'var(--text-h)'}
+            onMouseOut={(e) => e.currentTarget.style.color = 'var(--text)'}
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+        </div>
       </nav>
     </motion.header>
   );
