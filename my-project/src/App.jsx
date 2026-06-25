@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { About } from './components/About'
@@ -11,8 +12,18 @@ import { Footer } from './components/Footer'
 import './App.css'
 
 function App() {
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+      document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
     <>
+      <div className="cursor-spotlight"></div>
       <div className="aurora-bg">
         <div className="aurora-blob aurora-1"></div>
         <div className="aurora-blob aurora-2"></div>

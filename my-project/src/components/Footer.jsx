@@ -1,5 +1,15 @@
+import { useState } from 'react';
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText('varunvamin@gmail.com');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <footer className="footer">
@@ -21,7 +31,7 @@ export function Footer() {
           <h4>Connect</h4>
           <ul className="footer-links">
             <li><a href="https://linkedin.com/in/varun-v-amin" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            <li><a href="mailto:varunvamin@gmail.com">Email</a></li>
+            <li><a href="#" onClick={handleCopyEmail}>{copied ? 'Copied!' : 'Email'}</a></li>
             <li><a href="tel:+919108315624">Phone</a></li>
           </ul>
         </div>
