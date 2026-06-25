@@ -708,10 +708,124 @@ section {
   font-size: 0.95rem;
 }
 
+/* -----------------------------
+   Filter Bar (Projects & Skills)
+----------------------------- */
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-secondary);
+  padding: 0.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-tab {
+  background: transparent;
+  color: var(--text);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.filter-tab:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.filter-tab.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+/* -----------------------------
+   Tech Stack Grid
+----------------------------- */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-strong);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tech-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-tertiary);
+  border-radius: 50%;
+  border: 1px solid var(--border);
+}
+
+.tech-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.tech-icon.lucide-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.invert-dark {
+  filter: invert(1);
+}
+
+.tech-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-h);
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 0 1.5rem;
+  }
+  
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 }

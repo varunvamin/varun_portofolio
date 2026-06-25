@@ -1,10 +1,16 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
 export function Projects() {
+  const [activeFilter, setActiveFilter] = useState('All');
+
+  const filters = ['All', 'AI & ML', 'Hardware & Embedded', 'Software Engineering'];
+
   const projects = [
     {
       title: 'RAG AI Assistant',
+      category: 'AI & ML',
       description: 'Engineered a Retrieval-Augmented Generation engine that processes document queries with sub-second semantic retrieval using FAISS and LangChain.',
       tech: ['Python', 'Streamlit', 'LangChain', 'FAISS', 'Gemini API'],
       image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1200',
@@ -13,6 +19,7 @@ export function Projects() {
     },
     {
       title: 'Machine Health Monitor',
+      category: 'Hardware & Embedded',
       description: 'Developed a real-time IoT monitoring system that detects machine anomalies, reducing unplanned downtime through predictive maintenance alerts.',
       tech: ['ESP32', 'Embedded C', 'Thingspeak', 'IoT'],
       image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800',
@@ -21,6 +28,7 @@ export function Projects() {
     },
     {
       title: 'Clinical Data Pipeline',
+      category: 'Software Engineering',
       description: 'Architected a high-performance clinical data pipeline automating the conversion of SNOMED-CT concepts to ICD-10 codes using FastAPI and Pandas.',
       tech: ['Python', 'Pandas', 'FastAPI', 'REST'],
       image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800',
@@ -29,6 +37,7 @@ export function Projects() {
     },
     {
       title: 'Science Tutor LLM',
+      category: 'AI & ML',
       description: 'Fine-tuned a Llama-based model via LoRA to deploy a domain-specific educational chatbot featuring a zero-shot two-layer classification system.',
       tech: ['Python', 'Flask', 'Groq API', 'LoRA', 'NLP'],
       image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800',
@@ -37,6 +46,7 @@ export function Projects() {
     },
     {
       title: 'Brain Tumor Detection',
+      category: 'AI & ML',
       description: 'Built a robust medical imaging classification system utilizing PCA and majority voting across SVM, KNN, and Random Forest for high-accuracy MRI analysis.',
       tech: ['Python', 'OpenCV', 'Scikit-learn', 'PCA'],
       image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800',
@@ -45,6 +55,7 @@ export function Projects() {
     },
     {
       title: 'Sequence Quest (PSoC)',
+      category: 'Hardware & Embedded',
       description: 'Designed a low-level embedded system on a PSoC microcontroller featuring secure real-time sequence validation and hardware UART communication.',
       tech: ['Embedded C', 'PSoC', 'UART', 'Hardware'],
       image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800',
@@ -53,6 +64,7 @@ export function Projects() {
     },
     {
       title: 'Temperature Alert System',
+      category: 'Hardware & Embedded',
       description: 'Implemented a SystemVerilog-based hardware temperature monitoring unit featuring real-time anomaly detection and sensor integration.',
       tech: ['SystemVerilog', 'Hardware', 'Digital Design'],
       image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800',
@@ -61,6 +73,7 @@ export function Projects() {
     },
     {
       title: 'DSP for Ultrasonic Echoes',
+      category: 'Hardware & Embedded',
       description: 'Simulated advanced DSP pipelines in MATLAB, optimizing ultrasonic echo clarity through Total Variation Denoising and Tikhonov Regularization.',
       tech: ['MATLAB', 'Signal Processing', 'Algorithms'],
       image: 'https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&q=80&w=800',
@@ -69,6 +82,7 @@ export function Projects() {
     },
     {
       title: 'Nutrient Calculator',
+      category: 'Software Engineering',
       description: 'Developed a Python-based data processing application that automates the calculation and analysis of daily nutritional intake.',
       tech: ['Python', 'Data Processing'],
       image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800',
@@ -77,51 +91,68 @@ export function Projects() {
     }
   ];
 
+  const filteredProjects = activeFilter === 'All' ? projects : projects.filter(p => p.category === activeFilter);
+
   return (
     <section id="projects">
       <div className="section-container">
         <h2 className="section-title">Projects</h2>
         
-        <div className="bento-grid">
-          {projects.map((project, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`bento-card ${project.featured ? 'featured' : 'standard'}`}
+        <div className="filter-bar" style={{ maxWidth: '800px', margin: '0 auto 3rem auto' }}>
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              className={`filter-tab ${activeFilter === filter ? 'active' : ''}`}
             >
-              <div className="bento-image-wrapper">
-                <img src={project.image} alt={project.title} className="bento-image" />
-              </div>
-              <div className="bento-content">
-                <h3 className="bento-title">{project.title}</h3>
-                <p className="bento-desc">{project.description}</p>
-                
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
-                  {project.tech.map((tech, i) => (
-                    <span key={i} style={{ 
-                      fontSize: '0.75rem', 
-                      padding: '0.25rem 0.75rem', 
-                      background: 'var(--badge-bg)', 
-                      borderRadius: '100px',
-                      color: 'var(--text)'
-                    }}>
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="bento-links" style={{ marginTop: 'auto' }}>
-                  <a href={project.github !== '#' ? project.github : 'https://github.com/varunvamin'} className="bento-link" target="_blank" rel="noopener noreferrer">
-                    View on GitHub <ArrowUpRight size={14} />
-                  </a>
-                </div>
-              </div>
-            </motion.div>
+              {filter}
+            </button>
           ))}
         </div>
+
+        <motion.div layout className="bento-grid">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, index) => (
+              <motion.div 
+                layout
+                key={project.title}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4 }}
+                className={`bento-card ${project.featured ? 'featured' : 'standard'}`}
+              >
+                <div className="bento-image-wrapper">
+                  <img src={project.image} alt={project.title} className="bento-image" />
+                </div>
+                <div className="bento-content">
+                  <h3 className="bento-title">{project.title}</h3>
+                  <p className="bento-desc">{project.description}</p>
+                  
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
+                    {project.tech.map((tech, i) => (
+                      <span key={i} style={{ 
+                        fontSize: '0.75rem', 
+                        padding: '0.25rem 0.75rem', 
+                        background: 'var(--badge-bg)', 
+                        borderRadius: '100px',
+                        color: 'var(--text)'
+                      }}>
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="bento-links" style={{ marginTop: 'auto' }}>
+                    <a href={project.github !== '#' ? project.github : 'https://github.com/varunvamin'} className="bento-link" target="_blank" rel="noopener noreferrer">
+                      View on GitHub <ArrowUpRight size={14} />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

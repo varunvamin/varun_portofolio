@@ -29,8 +29,15 @@ export function Hero() {
         >
           <div className="hero-split">
             <div className="hero-left">
-              <div style={{ fontSize: '1.2rem', color: 'var(--text-h)', marginBottom: '1rem', fontWeight: '500' }}>
-                👋 Hey
+              <div style={{ fontSize: '1.2rem', color: 'var(--text-h)', marginBottom: '1rem', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <motion.div
+                  animate={{ rotate: [0, 14, -8, 14, -4, 10, 0, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 }}
+                  style={{ display: 'inline-block', transformOrigin: '70% 70%' }}
+                >
+                  👋
+                </motion.div>
+                Hey
               </div>
               
               <h1 className="hero-title" style={{ textAlign: 'left', fontSize: 'clamp(3.5rem, 6vw, 5rem)', fontWeight: '800', marginBottom: '0.5rem' }}>
@@ -69,7 +76,37 @@ export function Hero() {
               </div>
             </div>
             
-            <div className="hero-right">
+            <div className="hero-right" style={{ position: 'relative' }}>
+              <motion.div 
+                animate={{ y: [0, -15, 0] }} 
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                style={{ position: 'absolute', top: '-5%', left: '-10%', zIndex: 2 }}
+              >
+                <div style={{ background: 'var(--bg-tertiary)', padding: '0.8rem', borderRadius: '50%', boxShadow: 'var(--shadow-strong)', border: '1px solid var(--border)', backdropFilter: 'blur(10px)' }}>
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" style={{ width: '35px', height: '35px' }} />
+                </div>
+              </motion.div>
+
+              <motion.div 
+                animate={{ y: [0, 15, 0] }} 
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                style={{ position: 'absolute', top: '10%', right: '-10%', zIndex: 2 }}
+              >
+                <div style={{ background: 'var(--bg-tertiary)', padding: '0.8rem', borderRadius: '50%', boxShadow: 'var(--shadow-strong)', border: '1px solid var(--border)', backdropFilter: 'blur(10px)' }}>
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C" style={{ width: '35px', height: '35px' }} />
+                </div>
+              </motion.div>
+
+              <motion.div 
+                animate={{ y: [0, -20, 0] }} 
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                style={{ position: 'absolute', bottom: '5%', right: '-5%', zIndex: 2 }}
+              >
+                <div style={{ background: 'var(--bg-tertiary)', padding: '0.8rem', borderRadius: '50%', boxShadow: 'var(--shadow-strong)', border: '1px solid var(--border)', backdropFilter: 'blur(10px)' }}>
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" style={{ width: '35px', height: '35px' }} />
+                </div>
+              </motion.div>
+
               <div className="hero-image-container">
                 <img src="/varunamin.png" alt="Varun V Amin" className="hero-profile-image" />
               </div>
