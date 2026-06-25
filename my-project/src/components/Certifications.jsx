@@ -34,7 +34,7 @@ export function Certifications() {
       <div className="section-container">
         <h2 className="section-title">Certifications</h2>
         
-        <div className="bento-grid">
+        <div className="cert-grid">
           {certifications.map((cert, index) => {
             // Index 0 and 3 will be featured (span 8), index 1 and 2 will be standard (span 4)
             const isFeatured = index === 0 || index === 3;

@@ -273,6 +273,21 @@ section {
   gap: 2rem;
 }
 
+/* Certifications Asymmetric Grid */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+
+.cert-grid .bento-card.featured {
+  grid-column: span 8;
+}
+
+.cert-grid .bento-card.standard {
+  grid-column: span 4;
+}
+
 .bento-card {
   background: var(--bg-tertiary);
   border: 1px solid var(--border);
@@ -348,6 +363,7 @@ section {
 @media (max-width: 1024px) {
   .bento-grid { grid-template-columns: repeat(2, 1fr); }
   .bento-content { padding: 1.5rem; }
+  .cert-grid .bento-card.featured, .cert-grid .bento-card.standard { grid-column: span 12; flex-direction: column; }
 }
 
 @media (max-width: 768px) {
