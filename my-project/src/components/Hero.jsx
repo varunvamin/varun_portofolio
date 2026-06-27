@@ -69,9 +69,13 @@ export function Hero() {
                 I focus on developing intelligent infrastructure and embedded hardware that meet strict performance requirements, with attention to detail, scalability, and robust architecture.
               </p>
               
-              <div className="hero-buttons" style={{ justifyContent: 'flex-start' }}>
+              <div className="hero-buttons" style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
                 <a href="#about" className="btn btn-primary" style={{ background: 'var(--accent)', color: '#fff', borderColor: 'var(--accent)', borderRadius: '8px' }}>
                   About Me &gt;
+                </a>
+                <a href="/varun_v_amin_resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  Resume
                 </a>
               </div>
             </div>

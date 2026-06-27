@@ -18,11 +18,38 @@ const LinkedinIcon = ({ size }) => (
 export function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [copied, setCopied] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Message sent successfully!');
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    // Web3Forms integration
+    // IMPORTANT: Replace the access_key below with your actual Web3Forms access key
+    const data = new FormData(e.target);
+    data.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY"); 
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        e.target.reset();
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus(null), 5000);
+    }
   };
 
   const handleCopyEmail = (e) => {
@@ -55,6 +82,7 @@ export function Contact() {
             <form onSubmit={handleSubmit} className="contact-form" style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
               <input 
                 type="text" 
+                name="name"
                 placeholder="Full Name *" 
                 required 
                 value={formData.name}
@@ -63,6 +91,7 @@ export function Contact() {
               />
               <input 
                 type="email" 
+                name="email"
                 placeholder="Email *" 
                 required 
                 value={formData.email}
@@ -70,6 +99,7 @@ export function Contact() {
                 className="contact-input"
               />
               <textarea 
+                name="message"
                 placeholder="Message *" 
                 required 
                 rows="5" 
@@ -78,9 +108,12 @@ export function Contact() {
                 className="contact-input"
                 style={{ resize: 'vertical' }}
               ></textarea>
-              <button type="submit" className="btn btn-primary" style={{ alignSelf: 'flex-end', marginTop: '0.5rem', background: 'var(--accent)', color: '#fff', border: 'none', borderRadius: '8px', padding: '1rem 2.5rem', fontWeight: '700', fontSize: '1.1rem' }}>
-                Say Hello 👋
+              <button disabled={isSubmitting} type="submit" className="btn btn-primary" style={{ alignSelf: 'flex-end', marginTop: '0.5rem', background: 'var(--accent)', color: '#fff', border: 'none', borderRadius: '8px', padding: '1rem 2.5rem', fontWeight: '700', fontSize: '1.1rem', opacity: isSubmitting ? 0.7 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }}>
+                {isSubmitting ? 'Sending...' : 'Say Hello 👋'}
               </button>
+              
+              {submitStatus === 'success' && <p style={{ color: '#10b981', textAlign: 'right', marginTop: '0.5rem' }}>Message sent successfully!</p>}
+              {submitStatus === 'error' && <p style={{ color: '#ef4444', textAlign: 'right', marginTop: '0.5rem' }}>Oops! Something went wrong. Please email me directly.</p>}
             </form>
           </div>
         </div>
