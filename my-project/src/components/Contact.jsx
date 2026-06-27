@@ -25,11 +25,11 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
-    
+
     // Web3Forms integration
     // IMPORTANT: Replace the access_key below with your actual Web3Forms access key
     const data = new FormData(e.target);
-    data.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY"); 
+    data.append("access_key", "11634045-2b66-406e-b2b1-f3adf8e0c87b");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -63,55 +63,55 @@ export function Contact() {
     <section id="contact" style={{ paddingBottom: '6rem' }}>
       <div className="section-container">
         <h2 className="section-title" style={{ textAlign: 'center' }}>Contact Me</h2>
-        
+
         <div className="contact-split">
           <div className="contact-image-container" style={{ display: 'flex', justifyContent: 'center' }}>
-            <img 
-              src="/contact-illustration.png" 
-              alt="Contact Illustration" 
-              style={{ width: '100%', maxWidth: '400px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))' }} 
+            <img
+              src="/contact-illustration.png"
+              alt="Contact Illustration"
+              style={{ width: '100%', maxWidth: '400px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.15))' }}
             />
           </div>
-          
+
           <div className="contact-form-container">
             <h3 style={{ fontSize: '2.2rem', color: 'var(--text-h)', marginBottom: '1rem', fontWeight: '700' }}>Get in touch</h3>
             <p style={{ color: 'var(--text)', marginBottom: '2.5rem', lineHeight: '1.6', fontSize: '1.1rem' }}>
               My inbox is always open! 💌 Whether you've got a burning question or want to drop a friendly "hello", I'm all ears! 👋 Let's chat! 🎉
             </p>
-            
+
             <form onSubmit={handleSubmit} className="contact-form" style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 name="name"
-                placeholder="Full Name *" 
-                required 
+                placeholder="Full Name *"
+                required
                 value={formData.name}
-                onChange={(e) => setFormData({...formData, name: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="contact-input"
               />
-              <input 
-                type="email" 
+              <input
+                type="email"
                 name="email"
-                placeholder="Email *" 
-                required 
+                placeholder="Email *"
+                required
                 value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="contact-input"
               />
-              <textarea 
+              <textarea
                 name="message"
-                placeholder="Message *" 
-                required 
-                rows="5" 
+                placeholder="Message *"
+                required
+                rows="5"
                 value={formData.message}
-                onChange={(e) => setFormData({...formData, message: e.target.value})}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="contact-input"
                 style={{ resize: 'vertical' }}
               ></textarea>
               <button disabled={isSubmitting} type="submit" className="btn btn-primary" style={{ alignSelf: 'flex-end', marginTop: '0.5rem', background: 'var(--accent)', color: '#fff', border: 'none', borderRadius: '8px', padding: '1rem 2.5rem', fontWeight: '700', fontSize: '1.1rem', opacity: isSubmitting ? 0.7 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }}>
                 {isSubmitting ? 'Sending...' : 'Say Hello 👋'}
               </button>
-              
+
               {submitStatus === 'success' && <p style={{ color: '#10b981', textAlign: 'right', marginTop: '0.5rem' }}>Message sent successfully!</p>}
               {submitStatus === 'error' && <p style={{ color: '#ef4444', textAlign: 'right', marginTop: '0.5rem' }}>Oops! Something went wrong. Please email me directly.</p>}
             </form>
@@ -125,14 +125,14 @@ export function Contact() {
             </div>
             <span>{copied ? 'Email Copied!' : 'varunvamin@gmail.com'}</span>
           </button>
-          
+
           <a href="https://github.com/varunvamin" target="_blank" rel="noopener noreferrer" className="contact-card">
             <div className="contact-icon-box">
               <GithubIcon size={24} />
             </div>
             <span>GitHub</span>
           </a>
-          
+
           <a href="https://linkedin.com/in/varun-v-amin" target="_blank" rel="noopener noreferrer" className="contact-card">
             <div className="contact-icon-box">
               <LinkedinIcon size={24} />
